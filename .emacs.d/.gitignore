@@ -1,0 +1,10 @@
+*.elc
+.smex-items
+ac-comphist.dat
+eshell
+places
+session.*
+backups/*
+%*
+semanticdb/*
+auto-save-list/*
