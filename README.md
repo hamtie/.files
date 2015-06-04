@@ -2,9 +2,9 @@
 
 ## Developer tools
 
-- (Java REPL)[http://www.javarepl.com/console.html]
+- [Java REPL](http://www.javarepl.com/console.html)
 - Emacs 24.3.1
-- (xmonad)[http://xmonad.org/documentation.html]
+- [xmonad](http://xmonad.org/documentation.html)
 
 ## Tips and Tricks
 
