@@ -12,3 +12,11 @@
 On a lenovo laptop (T440p) running xmonads and ubuntu 14.04, updating
 the kernel seemed to fix the issue.  I believe only updating to 3.17
 is required, but I went ahead and updated to the latest, 3.19.  This solved my issues.
+
+## TODO
+- start xscreensaver daemon on startup
+- make sure laptop locks when closing the lid and reopening
+- fix mini displayport detection
+- check out registering tab-complete on executables
+- start eclimd on startup
+
