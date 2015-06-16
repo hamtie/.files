@@ -8,3 +8,4 @@ backups/*
 %*
 semanticdb/*
 auto-save-list/*
+tramp
