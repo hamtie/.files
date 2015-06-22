@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if [ $# -eq 0 ]
+if [ -z "$1" ]
   then
     echo "Company name provided"
     exit 1
