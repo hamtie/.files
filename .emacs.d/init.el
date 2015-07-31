@@ -207,3 +207,5 @@
 ;; (malabar-run-groovy)
 
 
+(put 'scroll-left 'disabled nil)
+(put 'upcase-region 'disabled nil)

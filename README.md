@@ -26,6 +26,57 @@ OR http://www.elonflegenheimer.com/2012/06/22/xmonad-in-ubuntu-12.04-with-unity-
 sudo apt-get install gnome-panel 
 ```
 
+3) Run Multiple dropboxes
+
+- change the HOME variable to the directory where you want to install
+  the dropbox daemon.
+- configure dropbox daemon like you would normally
+- repeat the last two steps for each dropbox version you want
+- on startup, run something like
+
+```
+REAL_HOME="$HOME"
+HOME="$REAL_HOME/boxes/biz" dropbox start -i
+HOME="$REAL_HOME/boxes/personal" dropbox start -i
+```
+
+4) VPN client
+forticlient
+
+5) Screen Brightness
+http://askubuntu.com/questions/149054/how-to-change-lcd-brightness-from-command-line-or-via-script
+
+6) Trackpad
+
+_I have no idea what I'm doing here, but the thinkpad t440 trackpad is very
+annoying so you pretty much can't make it worse_
+
+First attempt:
+<!-- http://yarenty.blogspot.com/2014/08/how-to-fix-macbook-pro-touchpad-on.html -->
+<!-- https://github.com/ScottGarman/thinkpad_t440s -->
+
+<!-- ``` sh -->
+<!-- sudo apt-get install -y xserver-xorg-input-mtrack dconf-editor -->
+<!-- ``` -->
+
+Second Attempt:
+*https://launchpad.net/~aglasgall/+archive/ubuntu/synaptics*
+http://who-t.blogspot.com/2014/03/xorg-synaptics-support-for-lenovo-t440.html
+(Note, I'm running kernel 3.19 sooo)
+
+``` sh
+sudo add-apt-repository ppa:rsrchboy/xorg-synaptics
+sudo apt-get update
+sudo apt-get install xserver-xorg-input-synaptics
+xserver-xorg-input-mtrack xserver-xorg-input-mtrack
+xserver-xorg-input-mtrack-lts-trusty xserver-xorg-input-multitouch
+synaptic # i'm just grabbing at straws at this point
+synclient -V
+```
+Start bluetoothd on startup?
+
+
+
 ## TODO
 - make sure laptop locks when closing the lid and reopening
 - fix mini displayport detection
