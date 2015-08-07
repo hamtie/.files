@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-
+#
 # Usage ./replace.sh <company-name>
+#
 
 set -e
 
 if [ -z "$1" ]
   then
-    echo "Company name provided"
+    echo "Company name not provided"
     exit 1
 fi
 
@@ -22,3 +23,4 @@ echo -e $CMD
 eval $CMD
 
 exit 0
+
