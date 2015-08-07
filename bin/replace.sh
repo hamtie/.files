@@ -21,6 +21,4 @@ echo -e "Running:"
 echo -e $CMD
 eval $CMD
 
-#find . -type f ! -path "./tmp/*" ! -path "./log/*" ! -path "./db/*" ! -path "./target/*" ! -path "./*.log" ! -path "./.*" -exec sed -r -i'' -e "s/$OLD_COPYRIGHT/$NEW_COPYRIGHT/g" {} \;
-
 exit 0
