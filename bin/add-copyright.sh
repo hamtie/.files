@@ -15,7 +15,7 @@ COPYRIGHT="// (c) Copyright $COMPANY, Inc.\n// All Rights Reserved.\n"
 
 IGNORE_DIRS=('./tmp/*' './db/*' './target/*' './*.log' './.*')
 
-CMD="find . -type f $(printf "! -path \"%s\" " "${IGNORE_DIRS[@]}") -exec sed -i '1 a $COPYRIGHT' {} \;"
+CMD="find . -type f $(printf "! -path \"%s\" " "${IGNORE_DIRS[@]}") -exec sed -i '1 i $COPYRIGHT' {} \;"
 
 echo -e "Running:"
 echo -e $CMD
