@@ -75,6 +75,9 @@ synclient -V
 ```
 Start bluetoothd on startup?
 
+... trackpad still freezing ... hmm
+
+http://packages.ubuntu.com/trusty/gnome/indicator-bluetooth
 
 
 ## TODO
