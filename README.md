@@ -26,7 +26,11 @@ OR http://www.elonflegenheimer.com/2012/06/22/xmonad-in-ubuntu-12.04-with-unity-
 sudo apt-get install gnome-panel 
 ```
 
-3) Run Multiple dropboxes
+4) Use arandr, a grphaical display for xrandr
+
+``` sudo apt-get install arandr ```
+
+5) Run Multiple dropboxes
 
 - change the HOME variable to the directory where you want to install
   the dropbox daemon.
@@ -40,13 +44,13 @@ HOME="$REAL_HOME/boxes/biz" dropbox start -i
 HOME="$REAL_HOME/boxes/personal" dropbox start -i
 ```
 
-4) VPN client
+6) VPN client
 forticlient
 
-5) Screen Brightness
+7) Screen Brightness
 http://askubuntu.com/questions/149054/how-to-change-lcd-brightness-from-command-line-or-via-script
 
-6) Trackpad
+8) Trackpad
 
 _I have no idea what I'm doing here, but the thinkpad t440 trackpad is very
 annoying so you pretty much can't make it worse_

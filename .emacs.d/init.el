@@ -209,3 +209,7 @@
 
 (put 'scroll-left 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+(add-hook 'java-mode-hook (lambda ()
+                            (setq c-basic-offset 2)))
+(put 'downcase-region 'disabled nil)
