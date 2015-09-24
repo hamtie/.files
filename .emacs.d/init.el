@@ -138,6 +138,20 @@
 ;; add the emacs-eclim source
 (require 'ac-emacs-eclim-source)
 (ac-emacs-eclim-config)
+(setq compilation-skip-threshold 2)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Command to run a function on marked files in dired mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun dired-mark-cmd (cmd)
+  (interactive "CCommand: ")
+  (dolist (file (dired-get-marked-files))
+    (find-file file)
+    (funcall cmd)
+    (save-buffer)
+    (kill-buffer nil)))
+
+
 
 ;;;;;;;;;;;;;;;;;
 ;; Malabar Mode
