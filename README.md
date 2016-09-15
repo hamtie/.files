@@ -84,11 +84,23 @@ Start bluetoothd on startup?
 http://packages.ubuntu.com/trusty/gnome/indicator-bluetooth
 
 
+9) Load a jar in javarepl
+``` :cp /home/myname/myproject/target/myjar.jar```
+
+10) Notifications
+- http://www.webupd8.org/2012/06/closable-movable-notifyosd.html
+-
+  http://askubuntu.com/questions/128474/how-to-customize-on-screen-notifications
+
+``` sh
+> NotifyOSDConfiguration
+```
+
 ## TODO
 - make sure laptop locks when closing the lid and reopening
 - fix mini displayport detection
 - check out registering tab-complete on executables
 - detect networks
-- add battery indicator to xmobar
 - create install script for .files that creates symlinks when
   appropriate, etc
+

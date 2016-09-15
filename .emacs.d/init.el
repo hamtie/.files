@@ -46,6 +46,7 @@
  '(eclimd-default-workspace "/home/hannah/eclipse-luna-workspace")
  '(help-at-pt-display-when-idle t nil (help-at-pt))
  '(help-at-pt-timer-delay 0.1))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -227,3 +228,13 @@
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 2)))
 (put 'downcase-region 'disabled nil)
+
+;; Markdown
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; https://github.com/ajtulloch/mkdown.el
+(setq markdown-css-path mkdown-css-file-name)
