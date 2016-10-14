@@ -1,6 +1,0 @@
-[submodule ".emacs.d/addon/cedet"]
-	path = .emacs.d/addon/cedet
-	url = git@github.com:alexott/cedet.git
-[submodule ".emacs.d/addon/better-defaults"]
-	path = .emacs.d/addon/better-defaults
-	url = git@github.com:technomancy/better-defaults.git
