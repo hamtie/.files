@@ -3,7 +3,20 @@
 ## Developer tools
 
 - [Java REPL](http://www.javarepl.com/console.html)
-- Emacs 24.3.1
+- Emacs 25.1
+  ```
+      sudo add-apt-repository -y ppa:ubuntu-elisp
+      sudo apt-get update
+      sudo apt-get install emacs-snapshot
+  ```
+- Git 1.9.4
+    ```
+    sudo apt-get install python-software-properties
+    sudo add-apt-repository ppa:git-core/ppa
+    sudo apt-get update
+    sudo apt-get install git
+    git --version
+  ```
 - [xmonad](http://xmonad.org/documentation.html)
 
 ## Tips and Tricks
@@ -23,7 +36,7 @@ upower -i /org/freedesktop/UPower/devices/battery_BAT0
 https://bugs.launchpad.net/ubuntu/+source/xmonad/+bug/989405
 OR http://www.elonflegenheimer.com/2012/06/22/xmonad-in-ubuntu-12.04-with-unity-2d.html
 ```sh
-sudo apt-get install gnome-panel 
+sudo apt-get install gnome-panel
 ```
 
 4) Use arandr, a grphaical display for xrandr
@@ -103,4 +116,3 @@ http://packages.ubuntu.com/trusty/gnome/indicator-bluetooth
 - detect networks
 - create install script for .files that creates symlinks when
   appropriate, etc
-
