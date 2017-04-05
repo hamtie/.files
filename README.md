@@ -17,25 +17,28 @@
 
 1) Check battery
 
-``` sh
-upower -i /org/freedesktop/UPower/devices/battery_BAT0
-```
+    ``` sh
+    upower -i /org/freedesktop/UPower/devices/battery_BAT0
+    ```
 
 2) xmonads gnome bug
-https://bugs.launchpad.net/ubuntu/+source/xmonad/+bug/989405
-OR http://www.elonflegenheimer.com/2012/06/22/xmonad-in-ubuntu-12.04-with-unity-2d.html
-```sh
-sudo apt-get install gnome-panel
-```
+
+    - https://bugs.launchpad.net/ubuntu/+source/xmonad/+bug/989405
+    - OR http://www.elonflegenheimer.com/2012/06/22/xmonad-in-ubuntu-12.04-with-unity-2d.html
+    ```sh
+    sudo apt-get install gnome-panel
+    ```
 
 3) Use arandr, a grphaical display for xrandr
 
-``` sudo apt-get install arandr ```
+    ``` sudo apt-get install arandr ```
 
 
 4) Screen Brightness
-http://askubuntu.com/questions/149054/how-to-change-lcd-brightness-from-command-line-or-via-script
+
+    - http://askubuntu.com/questions/149054/how-to-change-lcd-brightness-from-command-line-or-via-script
 
 
 5) Load a jar in javarepl
-``` :cp /home/myname/myproject/target/myjar.jar```
+
+    ``` :cp /home/myname/myproject/target/myjar.jar```
