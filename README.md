@@ -50,3 +50,9 @@
     ```
     - Trouble with alsa / pulseaudio creating static?
       Change line `load-module module-udev-detect` to `load-module module-udev-detect tsched=0`in pulseaudio config in `/etc/pulse/default.pa`
+
+7) Remap capslock -> escape
+
+    ```
+    sudo setxkbmap -option caps:escape
+    ```
