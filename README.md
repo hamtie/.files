@@ -42,3 +42,8 @@
 5) Load a jar in javarepl
 
     ``` :cp /home/myname/myproject/target/myjar.jar```
+
+6) Xmobar
+```
+sudo apt-get install libasound2-dev libiw-dev libghc-libxml-sax-dev c2hs libxpm-dev
+```
