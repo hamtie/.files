@@ -46,4 +46,5 @@
 6) Xmobar
 ```
 sudo apt-get install libasound2-dev libiw-dev libghc-libxml-sax-dev c2hs libxpm-dev
+cabal install xmobar --flags="all_extensions"
 ```
