@@ -9,7 +9,7 @@
       sudo apt-get install emacs-snapshot
   ```
 
-- [xmonad with gnome-session for ubuntu 16.10](https://github.com/Gekkio/gnome-session-xmonad)
+- Xmonad + Xmobar
 
 - [Java REPL](http://www.javarepl.com/console.html)
 
@@ -43,8 +43,10 @@
 
     ``` :cp /home/myname/myproject/target/myjar.jar```
 
-6) Xmobar
+6) Xmonad + Xmobar
     ```
      sudo apt-get install libasound2-dev libiw-dev libghc-libxml-sax-dev c2hs libxpm-dev
      cabal install xmobar --flags="all_extensions"
     ```
+    - Trouble with alsa / pulseaudio creating static?
+      Change line `load-module module-udev-detect` to `load-module module-udev-detect tsched=0`in pulseaudio config in `/etc/pulse/default.pa`
