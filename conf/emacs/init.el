@@ -1,5 +1,6 @@
 ;; Required packages.
-(setq package-list '(anti-zenburn-theme ac-helm helm-c-yasnippet helm-google better-defaults cedit dired-launch expand-region find-file-in-project helm helm-dired-history helm-dirset helm-package helm-smex helm-themes idle-highlight-mode ido-at-point ido-load-library ido-ubiquitous jdee keychain-environment list-unicode-display log4j-mode magit magit-gh-pulls markdown-mode markdown-mode+ markdown-preview-mode paredit paredit-everywhere paren-completer pug-mode scala-mode smex xterm-color))
+(setq package-list
+      '(anti-zenburn-theme ac-helm helm-c-yasnippet helm-google better-defaults cedit dired-launch expand-region find-file-in-project helm helm-dired-history helm-dirset helm-package helm-smex helm-themes idle-highlight-mode ido-at-point ido-load-library ido-ubiquitous jdee keychain-environment list-unicode-display log4j-mode magit magit-gh-pulls markdown-mode markdown-mode+ markdown-preview-mode paredit paredit-everywhere paren-completer pug-mode scala-mode smex xterm-color tide web-mode))
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -27,9 +28,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-
- ;; '(package-selected-packages (quote()))
-)
+ '(package-selected-packages
+   (quote
+    (tide ess ess-R-data-view ess-smart-equals haskell-mode xterm-color scala-mode pug-mode paren-completer paredit-everywhere paredit markdown-preview-mode markdown-mode+ markdown-mode magit-gh-pulls magit log4j-mode list-unicode-display keychain-environment jdee ido-ubiquitous ido-load-library ido-at-point idle-highlight-mode helm-themes helm-smex helm-package helm-dirset helm-dired-history find-file-in-project expand-region dired-launch cedit better-defaults helm-google helm-c-yasnippet ac-helm anti-zenburn-theme))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -108,10 +109,49 @@
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 2)))
 
-(jdee-abbrev-mode)
-(setq jdee-server-dir "~/Code/z/jdee-server/target/jdee-1.1-SNAPSHOT.jar")
-
 ;; Load default auto-complete configs
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
+
+;; Tide setup
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  ;; (company-mode +1)
+  )
+
+;; aligns annotation to the right hand side
+;;(setq company-tooltip-align-annotations t)
+
+;; formats the buffer before saving
+(add-hook 'before-save-hook 'tide-format-before-save)
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil))
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+
+;; (add-hook 'js2-mode-hook #'setup-tide-mode)
+;; (require 'web-mode)
+;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+;; (add-hook 'web-mode-hook
+;;           (lambda ()
+;;             (when (string-equal "jsx" (file-name-extension buffer-file-name))
+;;               (setup-tide-mode))))
+
+(setq tide-format-options '(:indentSize 2 :tabSize 2))
+(setq tide-tsserver-executable "/usr/local/bin/tsserver")
