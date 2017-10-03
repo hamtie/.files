@@ -1,6 +1,6 @@
 ;; Required packages.
 (setq package-list
-      '(anti-zenburn-theme ac-helm helm-c-yasnippet helm-google better-defaults cedit dired-launch expand-region find-file-in-project helm helm-dired-history helm-dirset helm-package helm-smex helm-themes idle-highlight-mode ido-at-point ido-load-library ido-ubiquitous jdee keychain-environment list-unicode-display log4j-mode magit magit-gh-pulls markdown-mode markdown-mode+ markdown-preview-mode paredit paredit-everywhere paren-completer pug-mode scala-mode smex xterm-color tide web-mode))
+      '(alect-themes ac-helm helm-c-yasnippet helm-google better-defaults cedit dired-launch expand-region find-file-in-project helm helm-dired-history helm-dirset helm-package helm-smex helm-themes idle-highlight-mode ido-completing-read+ jdee keychain-environment list-unicode-display log4j-mode magit magit-gh-pulls markdown-mode markdown-mode+ markdown-preview-mode paredit paredit-everywhere paren-completer pug-mode scala-mode smex xterm-color tide web-mode))
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -30,7 +30,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (tide ess ess-R-data-view ess-smart-equals haskell-mode xterm-color scala-mode pug-mode paren-completer paredit-everywhere paredit markdown-preview-mode markdown-mode+ markdown-mode magit-gh-pulls magit log4j-mode list-unicode-display keychain-environment jdee ido-ubiquitous ido-load-library ido-at-point idle-highlight-mode helm-themes helm-smex helm-package helm-dirset helm-dired-history find-file-in-project expand-region dired-launch cedit better-defaults helm-google helm-c-yasnippet ac-helm anti-zenburn-theme))))
+    (web-mode alect-themes tide ess ess-R-data-view ess-smart-equals haskell-mode xterm-color scala-mode pug-mode paren-completer paredit-everywhere paredit markdown-preview-mode markdown-mode+ markdown-mode magit-gh-pulls magit log4j-mode list-unicode-display keychain-environment jdee ido-completing-read+ idle-highlight-mode helm-themes helm-smex helm-package helm-dirset helm-dired-history find-file-in-project expand-region dired-launch cedit better-defaults helm-google helm-c-yasnippet ac-helm))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -43,7 +43,7 @@
 ;;; CUSTOM
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; Main theme
-(load-theme 'anti-zenburn t)
+(load-theme 'alect-dark-bis t)
 
 ;; Highlight matching parentheses
 (show-paren-mode)
@@ -79,11 +79,19 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; Ido
-(require 'ido)
-(require 'ido-ubiquitous)
+;;(require 'ido-completing-read+)
 (ido-mode 1)
 (ido-everywhere 1)
 (ido-ubiquitous-mode 1)
+
+;;
+;;(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;;Set up helm-mode
 (require 'helm)
