@@ -10,7 +10,6 @@
 
 (require 'package)
 (add-to-list 'load-path "~/.emacs.d/addon")
-;; (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
@@ -43,7 +42,7 @@
 ;;; CUSTOM
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; Main theme
-(load-theme 'alect-dark-bis t)
+(load-theme 'alect-dark t)
 
 ;; Highlight matching parentheses
 (show-paren-mode)
